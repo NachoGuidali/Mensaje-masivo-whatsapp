@@ -1,7 +1,14 @@
 import pandas as pd
 import pyautogui as pg
+import xlwings as xw
 import webbrowser as web
 import time
+
+    # abrimos el archivo con xlwings
+archivo_excel = xw.Book(r"./Telefonos.xlsx")
+
+    # Accede a la hoja activa
+hoja_activa = archivo_excel.sheets.active
 
 # 1- LEEMOS EL EXCEL DONDE TENEMOS LOS DATOS
 
@@ -34,8 +41,19 @@ for i in range(len(data)):
     time.sleep(1.5)                   # TIEMPO DE ESPERA LUEGO DE CLICKEAR LA BARRA DE MENSAJE
     pg.press('enter')                 # PRESIONAR ENTER PARA ENVIAR EL MENSAJE
 
-# 4- CERRAR LA PESTAÑA
+
+# 5- CERRAR LA PESTAÑA
 
     time.sleep(2)                     # TIEMPO DE ESPERA PRUDENTE PARA QUE SE ENVIE EL MENSAJE
     pg.hotkey('ctrl', 'w')            # CERRAR LA PESTAÑA
     time.sleep(2)                     # TIEMPO DE ESPERA HASTA VOLVER A INICIAR EL BUCLE
+
+
+# 6- MARCAMOS COMO ENVIADO LA FILA QUE SE ENVIO EL MENSAJE, EN ESTE CASO EN LA COLUMNDA "D"
+    celda_enviado = hoja_activa.range("D" + str(i+2))
+    celda_enviado.value = "Enviado"
+        
+# 7- GUARDAMOS Y CERRAMOS EL EXCEL MODIFICADO
+    
+archivo_excel.save()
+archivo_excel.close() 
