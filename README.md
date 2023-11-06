@@ -5,10 +5,10 @@
 ## Requerimentos:
  - Tener Python instalado
  - Instalar las siguientes modulos de Python:
-     1. Pandas (pip install pandas)
-     2. pyautogui (pip install pyautogui)
-     3. Webbrowser (dependiendo de la version de Python ya puede estar instalado)
-     4. openpyxl (pip install openpyxl - dependiendo de la version de Excel que se use es necesaria o no)
+     1\. Pandas (pip install pandas)
+     2\. pyautogui (pip install pyautogui)
+     3\. Webbrowser (dependiendo de la version de Python ya puede estar instalado)
+     4\. openpyxl (pip install openpyxl - dependiendo de la version de Excel que se use es necesaria o no)
  - Iniciar sesion en Whatsapp Web desde la cuenta que se desea enviar los mensajes    
 
 ## Tecnologias usadas:
